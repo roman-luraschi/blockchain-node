@@ -7,6 +7,8 @@
     "strict": true,               // Habilita todas las verificaciones de tipo
     "esModuleInterop": true,      // Compatibilidad con módulos CommonJS/ES
     "skipLibCheck": true,         // Omite verificación de tipos en librerías
+    "types": ["node", "express"],
+    "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true  // Evita errores en sistemas case-sensitive
   },
   "include": ["src/**/*.ts"],     // Archivos a incluir

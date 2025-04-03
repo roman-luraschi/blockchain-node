@@ -12,7 +12,6 @@ class Wallet {
     this.publicKey = this.keyPair.getPublic('hex');
   }
 
-  // Solo exponer métodos necesarios
   public getAddress(): string {
     return this.publicKey;
   }

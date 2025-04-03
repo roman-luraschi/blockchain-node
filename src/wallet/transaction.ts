@@ -4,6 +4,7 @@ import { SHA256 } from 'crypto-js';
 const ec = new EC('secp256k1');
 
 class Transaction {
+  
   private readonly fromAddress: string | null;
   private readonly toAddress: string;
   private readonly amount: number;
@@ -18,15 +19,16 @@ class Transaction {
     this.signature = '';
   }
 
-  // Getters
-  public getDetails() {
-    return {
-      fromAddress: this.fromAddress,
-      toAddress: this.toAddress,
-      amount: this.amount,
-      signature: this.signature,
-      timestamp: this.timestamp
-    };
+  public getFromAddress(): string | null {
+    return this.fromAddress;
+  }
+
+  public getToAddress(): string {
+    return this.toAddress;
+  }
+
+  public getAmount(): number {
+    return this.amount;
   }
 
   public calculateHash(): string {
@@ -43,7 +45,7 @@ class Transaction {
   }
 
   public isValid(): boolean {
-    if (this.fromAddress === null) return true; // Mining reward
+    if (this.fromAddress === null) return true; 
 
     if (!this.signature || this.signature.length === 0) {
       throw new Error('No signature in this transaction');

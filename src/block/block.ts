@@ -15,7 +15,7 @@ class Block {
   private nonce: number;
   private readonly difficulty: number;
 
-  constructor(index: number, data: BlockData, previousHash: string, difficulty = 2) {
+  constructor(index: number, data: BlockData, previousHash: string, difficulty: number) {
     this.index = index;
     this.timestamp = Date.now();
     this.data = data;
@@ -25,9 +25,12 @@ class Block {
     this.hash = this.calculateHash();
   }
 
-  // Getters
   public getHash(): string {
     return this.hash;
+  }
+
+  public getDifficulty(): number {
+    return this.difficulty;
   }
 
   public getPreviousHash(): string {
@@ -49,7 +52,7 @@ class Block {
   }
 
   public isValid(): boolean {
-    return this.hash === this.calculateHash(); 
+    return this.hash === this.calculateHash() && this.getHash().startsWith('0'.repeat(this.difficulty)); 
 }
 
   public mineBlock(): void {
