@@ -8,3 +8,6 @@ Este proyecto es una implementación básica de un nodo blockchain con soporte p
 - Soporte para transacciones y minería.
 - API REST para interactuar con el nodo.
 - Red P2P para sincronización entre nodos.
+
+🚧 **Este proyecto está en desarrollo activo.**  
+Algunas funcionalidades pueden no estar completas
